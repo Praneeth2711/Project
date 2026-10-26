@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-800 bg-slate-50;
+  }
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Bed Status Animations & Styling */
+.bed-glow-available {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+}
+.bed-glow-pending {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+}
+.bed-glow-occupied {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.25);
+}
+.bed-glow-maintenance {
+  box-shadow: 0 0 12px rgba(156, 163, 175, 0.2);
+}
+
+/* Pulse animation for pending approvals */
+@keyframes pulse-amber {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+.animate-pulse-amber {
+  animation: pulse-amber 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Room map blueprint styling */
+.room-blueprint-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+}
